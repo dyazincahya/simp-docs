@@ -1,2 +1,2 @@
-# simp-docs
-SimpDocs - Simple Documentation
+# SimpDocs
+Simple Documentation
