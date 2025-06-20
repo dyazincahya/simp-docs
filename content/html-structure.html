@@ -1,0 +1,126 @@
+<section id="html-structure" class="mb-5 doc-section">
+  <h2 class="h3 fw-bold border-bottom pb-2 mb-4">HTML Structure</h2>
+  <p class="lead">Understanding the core HTML structure of this documentation template will help you navigate the
+    project and make modifications confidently. The project is primarily composed of two types of HTML files: the main
+    `index.html` and individual content files located in the `content/` directory.</p>
+
+  <h3 class="h4 fw-bold mt-4 mb-3">1. Main `index.html` File</h3>
+  <p>The `index.html` file serves as the single entry point for your documentation. It includes the overall layout,
+    global stylesheets, JavaScript libraries, and the dynamic content area.</p>
+
+  <h4 class="h5 fw-bold mt-3 mb-2">Key Sections of `index.html`:</h4>
+  <ul>
+    <li><strong><code>&lt;head&gt;</code>:</strong> Contains metadata, title, external CSS links (Bootstrap, Font
+      Awesome, Highlight.js, custom styles), and any other head-level configurations.</li>
+    <li><strong><code>&lt;body&gt;</code>:</strong>
+      <ul>
+        <li><strong><code>&lt;header&gt;</code>:</strong> The top navigation bar, usually containing the brand logo,
+          search input, and global navigation links.</li>
+        <li><strong>Main Content Wrapper:</strong> Typically a `&lt;div class="container-fluid"&gt;` or `&lt;div
+          class="container"&gt;` that wraps the sidebar and the main content area.
+          <ul>
+            <li><strong><code>&lt;nav id="sidebar"&gt;</code>:</strong> The left-hand navigation sidebar, which
+              dynamically links to your content files.</li>
+            <li><strong><code>&lt;main id="content"&gt;</code>:</strong> The primary area where your documentation
+              content is loaded dynamically via AJAX.</li>
+          </ul>
+        </li>
+        <li><strong><code>&lt;footer&gt;</code> (Optional):</strong> A common area for copyright information or global
+          links at the bottom of the page.</li>
+        <li><strong>JavaScript Files:</strong> All JavaScript libraries (jQuery, Bootstrap, Highlight.js) and your
+          custom `script.js` are loaded just before the closing `&lt;/body&gt;` tag for optimal performance.</li>
+      </ul>
+    </li>
+  </ul>
+
+  <h4 class="h5 fw-bold mt-3 mb-2">Example `index.html` (Simplified Structure):</h4>
+  <pre><code class="language-html">
+&lt;!DOCTYPE html&gt;
+&lt;html lang="en"&gt;
+&lt;head&gt;
+    &lt;meta charset="UTF-8"&gt;
+    &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
+    &lt;title&gt;My Documentation&lt;/title&gt;
+    &lt;!-- Bootstrap CSS --&gt;
+    &lt;link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"&gt;
+    &lt;!-- Font Awesome --&gt;
+    &lt;link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"&gt;
+    &lt;!-- Highlight.js CSS --&gt;
+    &lt;link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/atom-one-dark.min.css"&gt;
+    &lt;!-- Custom CSS --&gt;
+    &lt;link rel="stylesheet" href="css/style.css"&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;!-- Header (Navbar with Search) --&gt;
+    &lt;header class="navbar navbar-expand-lg bg-dark sticky-top"&gt;
+        &lt;!-- ... header content ... --&gt;
+    &lt;/header&gt;
+
+    &lt;div class="container-fluid"&gt;
+        &lt;div class="row"&gt;
+            &lt;!-- Sidebar Navigation --&gt;
+            &lt;nav id="sidebar" class="col-lg-3 col-xl-2"&gt;
+                &lt;!-- ... sidebar links ... --&gt;
+            &lt;/nav&gt;
+
+            &lt;!-- Main Content Area --&gt;
+            &lt;main id="content" class="col-lg-9 col-xl-10 py-4"&gt;
+                &lt;!-- Content is dynamically loaded here --&gt;
+            &lt;/main&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+
+    &lt;!-- Optional Footer --&gt;
+    &lt;!-- &lt;footer class="footer mt-auto py-3 bg-light"&gt;...&lt;/footer&gt; --&gt;
+
+    &lt;!-- jQuery --&gt;
+    &lt;script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"&gt;&lt;/script&gt;
+    &lt;!-- Bootstrap JS --&gt;
+    &lt;script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"&gt;&lt;/script&gt;
+    &lt;!-- Highlight.js --&gt;
+    &lt;script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"&gt;&lt;/script&gt;
+    &lt;script&gt;hljs.highlightAll();&lt;/script&gt;
+    &lt;!-- Custom Script --&gt;
+    &lt;script src="js/script.js"&gt;&lt;/script&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+    </code></pre>
+
+  <h3 class="h4 fw-bold mt-5 mb-3">2. Individual Content Files (`content/` directory)</h3>
+  <p>Each distinct documentation page or section is stored as a separate HTML file within the `content/` directory.
+    These files are loaded into the `&lt;main id="content"&gt;` area of `index.html` when their corresponding sidebar
+    link is clicked.</p>
+
+  <h4 class="h5 fw-bold mt-3 mb-2">Structure of a Content File:</h4>
+  <p>Crucially, these content files should **only** contain the HTML relevant to their section. They must **not**
+    include full HTML document tags like `&lt;!DOCTYPE html&gt;`, `&lt;html&gt;`, `&lt;head&gt;`, or `&lt;body&gt;`.
+    jQuery's `.load()` method is designed to insert only the content of the specified file directly into the target
+    element.</p>
+
+  <h4 class="h5 fw-bold mt-3 mb-2">Example `content/your-page.html` File:</h4>
+  <pre><code class="language-html">
+&lt;!-- content/your-page.html --&gt;
+&lt;section id="your-page-id" class="mb-5 doc-section"&gt;
+    &lt;h2 class="h3 fw-bold border-bottom pb-2 mb-4"&gt;Your Page Title&lt;/h2&gt;
+    &lt;p&gt;This is the content of your documentation page.&lt;/p&gt;
+
+    &lt;h3&gt;Code Example:&lt;/h3&gt;
+    &lt;pre&gt;&lt;code class="language-js"&gt;
+// JavaScript example
+console.log("Hello from your page!");
+    &lt;/code&gt;&lt;/pre&gt;
+
+    &lt;h4&gt;Sub-section&lt;/h4&gt;
+    &lt;p&gt;More details about this section.&lt;/p&gt;
+&lt;/section&gt;
+    </code></pre>
+  <p class="mt-3">Remember to assign a unique `id` to your `&lt;section&gt;` tag, as this `id` will be used by the
+    sidebar navigation links (`href="#your-page-id"`) and for smooth scrolling and active link highlighting.</p>
+
+  <h3 class="h4 fw-bold mt-5 mb-3">3. CSS Styling</h3>
+  <p>The primary styling comes from Bootstrap 5, customized further by `css/style.css`. Classes like `mb-5`
+    (margin-bottom), `doc-section`, `h3`, `fw-bold`, `border-bottom`, `pb-2`, `mb-4` are used extensively to maintain a
+    consistent look and feel across all documentation pages.</p>
+  <p>Feel free to inspect elements using your browser's developer tools to understand how styles are applied.</p>
+
+</section>

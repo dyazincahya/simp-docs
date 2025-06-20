@@ -1,0 +1,52 @@
+<section id="change-highlight-theme" class="mb-5 doc-section">
+  <h2 class="h3 fw-bold border-bottom pb-2 mb-4">Changing Highlight.js Theme</h2>
+  <p class="lead">The code blocks in this documentation use <a href="https://highlightjs.org/"
+      target="_blank">Highlight.js</a> for syntax highlighting. Highlight.js comes with a variety of beautiful themes
+    that you can easily switch between to match your documentation's aesthetic.</p>
+
+  <h3 class="h4 fw-bold mt-4 mb-3">1. Choose Your Desired Theme</h3>
+  <p>Before making any changes, it's highly recommended to preview the available themes. Visit the official Highlight.js
+    demo page:</p>
+  <p><a href="https://highlightjs.org/static/demo/" target="_blank" class="btn btn-primary"><i
+        class="fas fa-external-link-alt me-2"></i> Browse Highlight.js Themes</a></p>
+  <p class="mt-3">On the demo page, you can select different themes from the sidebar to see how they look with various
+    code languages. Note down the exact filename of the theme's CSS (e.g., `atom-one-dark.min.css`, `github.min.css`,
+    `dracula.min.css`).</p>
+
+  <h3 class="h4 fw-bold mt-4 mb-3">2. Locate the Theme Link in `index.html`</h3>
+  <p>Open your project's main `index.html` file in your code editor. In the `&lt;head&gt;` section, you will find the
+    link to the Highlight.js theme stylesheet. It will look something like this:</p>
+  <pre><code class="language-html">
+&lt;!-- Highlight.js CSS (pilih tema favorit Anda, contoh: atom-one-dark) --&gt;
+&lt;link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/atom-one-dark.min.css"&gt;
+    </code></pre>
+
+  <h3 class="h4 fw-bold mt-4 mb-3">3. Replace the Theme Filename</h3>
+  <p>Change the filename in the `href` attribute to the new theme you selected. Ensure you maintain the correct path
+    (`https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/`) and just swap out the theme name.</p>
+
+  <h4 class="h5 fw-bold mt-3 mb-2">Example: Changing to "Dracula" Theme</h4>
+  <pre><code class="language-html">
+&lt;!-- Highlight.js CSS (tema Dracula) --&gt;
+&lt;link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/dracula.min.css"&gt;
+    </code></pre>
+
+  <h4 class="h5 fw-bold mt-3 mb-2">Example: Changing to "GitHub" Theme</h4>
+  <pre><code class="language-html">
+&lt;!-- Highlight.js CSS (tema GitHub) --&gt;
+&lt;link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/github.min.css"&gt;
+    </code></pre>
+  <p class="mt-3">Always use the `.min.css` version for production to ensure smaller file sizes.</p>
+
+  <h3 class="h4 fw-bold mt-4 mb-3">4. Save and Refresh Your Browser</h3>
+  <p>Save the changes to your `index.html` file. Then, open or refresh your documentation in the web browser. It's
+    recommended to perform a **hard refresh** (Ctrl + F5 on Windows/Linux, Cmd + Shift + R on Mac) to ensure your
+    browser loads the new stylesheet and not a cached version.</p>
+  <div class="alert alert-info border-0 shadow-sm" role="alert">
+    <h5 class="alert-heading"><i class="fas fa-info-circle me-2"></i> Tip: Experimentation</h5>
+    <p class="mb-0">Feel free to try out several themes until you find one that perfectly complements the overall design
+      of your documentation. You can also mix a light theme for code with a dark documentation theme, or vice versa, to
+      create visual contrast.</p>
+  </div>
+
+</section>

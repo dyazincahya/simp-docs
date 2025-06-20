@@ -1,0 +1,17 @@
+<section id="string-helpers" class="mb-5 doc-section">
+  <h2 class="h3 fw-bold border-bottom pb-2 mb-4">String Helpers</h2>
+  <h3>capitalizeFirstLetter(str)</h3>
+  <pre><code class="language-js">function capitalizeFirstLetter(str) {
+    if (!str) return '';
+    return str.charAt(0).toUpperCase() + str.slice(1);
+}</code></pre>
+  <p>Mengubah huruf pertama dari sebuah string menjadi huruf kapital.</p>
+
+  <h3>truncateString(str, maxLength)</h3>
+  <pre><code class="language-js">function truncateString(str, maxLength) {
+    if (!str || str.length <= maxLength) return str;
+    return str.slice(0, maxLength) + '...';
+}</code></pre>
+  <p>Memotong string jika melebihi panjang maksimum yang ditentukan, menambahkan elipsis.</p>
+  </code></pre>
+</section>

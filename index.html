@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dokumentasi JavaScript Helpers</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-LN+7fdVzj6u52u30Kp6M/trliBMCMKTyK833zpbD+pXdCLuTusPj697FH4R/5mcr" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+    integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.11.1/styles/default.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.11.1/styles/a11y-light.min.css">
+
+  <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+  <header class="sticky-top">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary shadow-sm">
+      <div class="container-fluid">
+        <a class="navbar-brand me-4" href="#">Simple Docs <span class="badge bg-secondary">v1.0</span></a>
+        <div class="d-flex align-items-center flex-grow-1">
+          <div class="input-group ms-auto me-3">
+            <input type="text" id="searchInput" class="form-control text-dark border-0 rounded-pill pe-5"
+              placeholder="Search documentation..." aria-label="Search">
+          </div>
+          <ul class="navbar-nav flex-row">
+
+            <li class="nav-item d-none d-lg-block"><a class="nav-link text-white me-3"
+                href="https://www.kang-cahya.com/">Blog</a></li>
+          </ul>
+          <ul class="navbar-nav flex-row ms-3">
+            <li class="nav-item"><a class="nav-link text-white" href="https://github.com/dyazincahya/simp-docs"><i
+                  class="fa-brands fa-github"></i></a></li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-lg-3 col-xl-2">
+        <nav id="sidebar" class="k-navigation bg-light p-3 border-end min-vh-100 shadow-sm">
+          <ul class="nav flex-column sidebar-nav">
+            <li class="nav-item my-1"><a class="nav-link text-dark fw-bold nav-link-custom"
+                data-content-file="welcome.html" href="#welcome"><span class="nav-link-text">Welcome</span></a></li>
+            <li class="nav-item my-1">
+              <a class="nav-link text-dark fw-bold d-flex justify-content-between align-items-center"
+                data-bs-toggle="collapse" href="#gettingStartedCollapse" role="button" aria-expanded="false"
+                aria-controls="gettingStartedCollapse">
+                <span class="nav-link-text">Getting Started</span> <i
+                  class="fas fa-chevron-right ms-auto collapse-icon"></i>
+              </a>
+              <div class="collapse show" id="gettingStartedCollapse">
+                <ul class="nav flex-column ms-3">
+                  <li class="nav-item"><a class="nav-link nav-link-custom" data-content-file="installation.html"
+                      href="#installation"><span class="nav-link-text">Installation</span></a></li>
+                  <li class="nav-item"><a class="nav-link nav-link-custom" data-content-file="html-structure.html"
+                      href="#html-structure"><span class="nav-link-text">HTML Structure</span></a></li>
+                  <li class="nav-item"><a class="nav-link nav-link-custom"
+                      data-content-file="change-highlight-theme.html" href="#change-highlight-theme"><span
+                        class="nav-link-text">Changing Highlight.js Theme</span></a></li>
+                  <li class="nav-item"><a class="nav-link nav-link-custom"
+                      data-content-file="code-embedding-examples.html" href="#code-embedding-examples"><span
+                        class="nav-link-text">Code Embedding Examples</span></a></li>
+                  <li class="nav-item"><a class="nav-link nav-link-custom" data-content-file="customization.html"
+                      href="#customization"><span class="nav-link-text">Customization</span></a></li>
+                  <li class="nav-item"><a class="nav-link nav-link-custom" data-content-file="logo-settings.html"
+                      href="#logo-settings"><span class="nav-link-text">Logo Settings</span></a></li>
+                </ul>
+              </div>
+            </li>
+            <!-- <li class="nav-item my-1">
+              <a class="nav-link text-dark fw-bold d-flex justify-content-between align-items-center"
+                data-bs-toggle="collapse" href="#layoutCollapse" role="button" aria-expanded="false"
+                aria-controls="layoutCollapse">
+                <span class="nav-link-text">Layout</span> <i class="fas fa-chevron-right ms-auto collapse-icon"></i>
+              </a>
+              <div class="collapse" id="layoutCollapse">
+                <ul class="nav flex-column ms-3">
+                  <li class="nav-item"><a class="nav-link nav-link-custom" data-content-file="layout-grid.html"
+                      href="#layout-grid"><span class="nav-link-text">Grid Layout</span></a></li>
+                  <li class="nav-item"><a class="nav-link nav-link-custom" data-content-file="layout-responsive.html"
+                      href="#layout-responsive"><span class="nav-link-text">Responsive Design</span></a></li>
+                </ul>
+              </div>
+            </li> -->
+            <!-- <li class="nav-item my-1"><a class="nav-link text-dark fw-bold nav-link-custom"
+                data-content-file="string-helpers.html" href="#string-helpers"><span
+                  class="nav-link-text">Content</span></a></li>
+            <li class="nav-item my-1"><a class="nav-link text-dark fw-bold nav-link-custom"
+                data-content-file="array-helpers.html" href="#array-helpers"><span
+                  class="nav-link-text">Components</span></a></li>
+            <li class="nav-item my-1"><a class="nav-link text-dark fw-bold nav-link-custom" data-content-file="faq.html"
+                href="#faq"><span class="nav-link-text">FAQ</span></a></li>
+            <li class="nav-item my-1"><a class="nav-link text-dark fw-bold nav-link-custom"
+                data-content-file="dom-helpers.html" href="#dom-helpers"><span class="nav-link-text">Source &
+                  Credits</span></a></li>
+            <li class="nav-item my-1"><a class="nav-link text-dark fw-bold nav-link-custom"
+                data-content-file="support.html" href="#support"><span class="nav-link-text">Support</span></a></li>
+            <li class="nav-item my-1"><a class="nav-link text-dark fw-bold nav-link-custom"
+                data-content-file="more-templates.html" href="#more-templates"><span class="nav-link-text">More
+                  Templates</span></a></li>
+            <li class="nav-item my-1"><a class="nav-link text-dark fw-bold nav-link-custom"
+                data-content-file="changelog.html" href="#changelog"><span class="nav-link-text">Changelog</span></a>
+            </li> -->
+          </ul>
+        </nav>
+      </div>
+
+      <main id="content" class="col-lg-9 col-xl-10 p-4"></main>
+    </div>
+  </div>
+
+  <button id="scrollToTopBtn" class="btn btn-primary rounded-circle shadow-lg d-none">
+    <i class="fas fa-arrow-up"></i>
+  </button>
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-ndDqU0Gzau9qJ1lfW4pNLlhNTkCfHzAVBReH9diLvGRem5+R9g2FzA8ZGN954O5Q"
+    crossorigin="anonymous"></script>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.11.1/highlight.min.js"></script>
+  <script>hljs.highlightAll();</script>
+  <script src="js/script.js"></script>
+</body>
+
+</html>

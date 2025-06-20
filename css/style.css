@@ -1,0 +1,12 @@
+.k-navigation {
+  position: fixed;
+  top: 70px;
+  left: 0;
+  overflow: hidden;
+  overflow-y: auto;
+  width: 260px;
+  height: calc(100% - 70px);
+  z-index: 1;
+  border-right: 1px solid rgba(0, 0, 0, 0.05);
+  transition: all 0.3s;
+}

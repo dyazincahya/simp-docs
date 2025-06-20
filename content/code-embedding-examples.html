@@ -1,0 +1,154 @@
+<section id="code-embedding-examples" class="mb-5 doc-section">
+  <h2 class="h3 fw-bold border-bottom pb-2 mb-4">Code Embedding Examples</h2>
+  <p class="lead">Highlight.js makes it incredibly easy to embed and beautifully display code snippets for various
+    programming languages within your documentation. Simply wrap your code in `&lt;pre&gt;&lt;code&gt;` tags and specify
+    the language using a class attribute.</p>
+
+  <div class="alert alert-info border-0 shadow-sm" role="alert">
+    <h5 class="alert-heading"><i class="fas fa-info-circle me-2"></i> Key Requirement</h5>
+    <p class="mb-0">For Highlight.js to work, always ensure your code is wrapped within a `&lt;pre&gt;&lt;code&gt;`
+      block, and the `&lt;code&gt;` tag has a class in the format `class="language-xyz"`, where `xyz` is the language
+      identifier (e.g., <code>js</code>, <code>html</code>, <code>css</code>, <code>php</code>, <code>python</code>).
+    </p>
+  </div>
+
+  <h3 class="h4 fw-bold mt-4 mb-3">1. JavaScript Example</h3>
+  <p>Displaying JavaScript code for your functions or scripts.</p>
+  <pre><code class="language-js">
+// Function to add two numbers
+function addNumbers(a, b) {
+    return a + b;
+}
+
+// Example usage
+const result = addNumbers(5, 3);
+console.log(`The sum is: ${result}`);
+
+// Async operation example
+async function fetchData(url) {
+    const response = await fetch(url);
+    const data = await response.json();
+    return data;
+}
+    </code></pre>
+
+  <h3 class="h4 fw-bold mt-4 mb-3">2. HTML Example</h3>
+  <p>Embedding HTML markup, remember to escape `<` as `&amp;lt;` and `>` as `&amp;gt;`.</p>
+  <pre><code class="language-html">
+&lt;!-- A simple navigation bar --&gt;
+&lt;nav class="navbar navbar-expand-lg navbar-light bg-light"&gt;
+    &lt;div class="container-fluid"&gt;
+        &lt;a class="navbar-brand" href="#"&gt;MySite&lt;/a&gt;
+        &lt;button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation"&gt;
+            &lt;span class="navbar-toggler-icon"&gt;&lt;/span&gt;
+        &lt;/button&gt;
+        &lt;div class="collapse navbar-collapse" id="navbarNav"&gt;
+            &lt;ul class="navbar-nav ms-auto"&gt;
+                &lt;li class="nav-item"&gt;
+                    &lt;a class="nav-link active" aria-current="page" href="#"&gt;Home&lt;/a&gt;
+                &lt;/li&gt;
+                &lt;li class="nav-item"&gt;
+                    &lt;a class="nav-link" href="#"&gt;Features&lt;/a&gt;
+                &lt;/li&gt;
+            &lt;/ul&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+&lt;/nav&gt;
+    </code></pre>
+
+  <h3 class="h4 fw-bold mt-4 mb-3">3. CSS Example</h3>
+  <p>Showcasing custom CSS rules or Bootstrap overrides.</p>
+  <pre><code class="language-css">
+/* Custom button styling */
+.btn-custom {
+    background-color: #6c5ce7;
+    color: #ffffff;
+    border-radius: 5px;
+    padding: 10px 20px;
+    transition: all 0.3s ease-in-out;
+}
+
+.btn-custom:hover {
+    background-color: #483d8b;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .container {
+        padding: 0 15px;
+    }
+}
+    </code></pre>
+
+  <h3 class="h4 fw-bold mt-4 mb-3">4. PHP Example</h3>
+  <p>If your project involves backend logic, here's how to display PHP code.</p>
+  <pre><code class="language-php">
+&lt;?php
+
+// Define a function to greet a user
+function greetUser($name) {
+    return "Hello, " . htmlspecialchars($name) . "!";
+}
+
+// Get name from query parameter, or default
+$userName = $_GET['name'] ?? 'Guest';
+
+// Output the greeting
+echo greetUser($userName);
+
+// Simple loop
+for ($i = 0; $i &lt; 5; $i++) {
+    echo "&lt;br&gt;Number: " . $i;
+}
+
+?&gt;
+    </code></pre>
+
+  <h3 class="h4 fw-bold mt-4 mb-3">5. Python Example</h3>
+  <p>For Python-based scripts or snippets.</p>
+  <pre><code class="language-python">
+# Function to calculate factorial
+def factorial(n):
+    if n == 0:
+        return 1
+    else:
+        return n * factorial(n-1)
+
+# Example usage
+num = 5
+print(f"The factorial of {num} is: {factorial(num)}")
+
+# Class definition
+class Dog:
+    def __init__(self, name, age):
+        self.name = name
+        self.age = age
+
+    def bark(self):
+        print(f"{self.name} says Woof!")
+
+my_dog = Dog("Buddy", 3)
+my_dog.bark()
+    </code></pre>
+
+  <h3 class="h4 fw-bold mt-4 mb-3">6. Plain Text / No Specific Language</h3>
+  <p>You can also use <code>language-plaintext</code> for generic text or configuration files where no specific syntax
+    highlighting is needed, but you want to maintain formatting.</p>
+  <pre><code class="language-plaintext">
+# This is a configuration file example
+# Lines starting with # are comments
+
+[database]
+host = localhost
+port = 5432
+user = admin
+password = your_password
+
+[application]
+debug_mode = true
+log_level = INFO
+    </code></pre>
+
+</section>

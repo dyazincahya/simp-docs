@@ -1,0 +1,125 @@
+<section id="installation" class="mb-5 doc-section">
+  <h2 class="h3 fw-bold border-bottom pb-2 mb-4">Installation Guide</h2>
+  <p class="lead">Getting started with your new documentation template is straightforward. Follow these steps to set up
+    your project and begin adding your content.</p>
+
+  <h3 class="h4 fw-bold mt-4 mb-3">1. Download the Template</h3>
+  <p>First, ensure you have downloaded the complete template package. You should have a folder structure similar to
+    this:</p>
+  <pre><code class="language-plaintext">
+my-docs/
+├── index.html
+├── css/
+│   └── style.css
+├── js/
+│   └── script.js
+└── content/
+    ├── documentation-intro.html
+    ├── installation.html
+    └── (other content files)
+    </code></pre>
+  <p>Unzip the downloaded package to your desired location on your local machine.</p>
+
+  <h3 class="h4 fw-bold mt-4 mb-3">2. Open with a Code Editor</h3>
+  <p>Open the `my-docs` folder (or whatever you named it) in your favorite code editor (e.g., VS Code, Sublime Text,
+    Atom). This will allow you to easily navigate and edit the project files.</p>
+
+  <h3 class="h4 fw-bold mt-4 mb-3">3. View in Browser</h3>
+  <p>You can directly open `index.html` in your web browser. Since this is a static HTML template, it doesn't require a
+    web server (like Apache or Nginx) to run locally, though using a local development server (e.g., with VS Code's Live
+    Server extension) is recommended for features like live reloading.</p>
+  <div class="alert alert-warning border-0 shadow-sm" role="alert">
+    <h5 class="alert-heading"><i class="fas fa-exclamation-triangle me-2"></i> Important Note on Local File Paths</h5>
+    <p class="mb-0">When opening `index.html` directly using a `file://` URL, some browser security restrictions (e.g.,
+      related to AJAX requests) might prevent dynamic content loading from working correctly. For the best experience,
+      especially when loading content via AJAX, it's highly recommended to use a simple local web server.</p>
+  </div>
+
+  <h3 class="h4 fw-bold mt-4 mb-3">4. Customization (Optional)</h3>
+  <p>You can customize the look and feel of the documentation by editing the `css/style.css` file. For more advanced
+    styling, you might consider using the original Sass files if provided in the full template package (refer to the
+    Sass documentation section if available).</p>
+
+</section>
+
+<section id="create-new-page" class="mb-5 doc-section">
+  <h2 class="h3 fw-bold border-bottom pb-2 mb-4">How to Create a New Documentation Page</h2>
+  <p class="lead">Adding new documentation sections or categories is simple, thanks to the modular structure of this
+    template. Each main documentation section resides in its own HTML file.</p>
+
+  <h3 class="h4 fw-bold mt-4 mb-3">1. Create a New Content File</h3>
+  <p>Inside the `content/` directory, create a new HTML file for your new documentation section. Use a descriptive
+    filename (e.g., `my-new-feature.html`, `api-endpoints.html`).</p>
+  <p class="mt-2"><strong>Important:</strong> This file should **only** contain the content of your `&lt;section&gt;`.
+    Do not include `&lt;html&gt;`, `&lt;head&gt;`, or `&lt;body&gt;` tags in these content files.</p>
+  <pre><code class="language-html">
+&lt;!-- content/my-new-feature.html --&gt;
+&lt;section id="my-new-feature" class="mb-5 doc-section"&gt;
+    &lt;h2 class="h3 fw-bold border-bottom pb-2 mb-4"&gt;My Awesome New Feature&lt;/h2&gt;
+    &lt;p&gt;This is the detailed documentation for my awesome new feature.&lt;/p&gt;
+    
+    &lt;h3&gt;Usage Example&lt;/h3&gt;
+    &lt;pre&gt;&lt;code class="language-js"&gt;
+function initializeFeature() {
+    // Your code here
+    console.log("Feature initialized!");
+}
+    &lt;/code&gt;&lt;/pre&gt;
+    
+    &lt;p&gt;Remember to include any necessary code snippets or images.&lt;/p&gt;
+&lt;/section&gt;
+    </code></pre>
+  <p class="mt-3">Make sure the `id` attribute of the `&lt;section&gt;` tag is unique and matches the hash (`#`) you'll
+    use in your sidebar link.</p>
+
+  <h3 class="h4 fw-bold mt-4 mb-3">2. Add a Link to the Sidebar (`index.html`)</h3>
+  <p>Now, you need to link your new content file from the sidebar navigation. Open `index.html` and locate the `&lt;nav
+    id="sidebar"&gt;` section.</p>
+  <p>Find the appropriate category (`&lt;li class="nav-item my-1"&gt;`) where you want to add your new link. If you need
+    a new top-level category, you can create a new `&lt;li&gt;` element.</p>
+  <pre><code class="language-html">
+&lt;!-- ... inside your sidebar &lt;ul class="sidebar-nav"&gt; ... --&gt;
+    &lt;!-- Example: Adding under "Getting Started" --&gt;
+    &lt;div class="collapse show" id="gettingStartedCollapse"&gt;
+        &lt;ul class="nav flex-column ms-3"&gt;
+            &lt;li class="nav-item"&gt;&lt;a class="nav-link nav-link-custom" data-content-file="installation.html" href="#installation"&gt;&lt;span class="nav-link-text"&gt;Installation&lt;/span&gt;&lt;/a&gt;&lt;/li&gt;
+            &lt;li class="nav-item"&gt;&lt;a class="nav-link nav-link-custom" data-content-file="my-new-feature.html" href="#my-new-feature"&gt;&lt;span class="nav-link-text"&gt;My New Feature&lt;/span&gt;&lt;/a&gt;&lt;/li&gt; &lt;!-- YOUR NEW LINK --&gt;
+        &lt;/ul&gt;
+    &lt;/div&gt;
+
+    &lt;!-- Example: Adding as a new top-level category --&gt;
+    &lt;li class="nav-item my-1"&gt;
+        &lt;a class="nav-link text-dark fw-bold nav-link-custom"
+            data-content-file="api-endpoints.html" href="#api-endpoints"&gt;&lt;span class="nav-link-text"&gt;API Endpoints&lt;/span&gt;&lt;/a&gt;
+    &lt;/li&gt;
+&lt;!-- ... rest of your sidebar ... --&gt;
+    </code></pre>
+  <p class="mt-3"><strong>Key attributes for your new link:</strong></p>
+  <ul>
+    <li><code>class="nav-link nav-link-custom"</code>: Essential for the JavaScript to handle clicks and dynamic
+      loading.</li>
+    <li><code>data-content-file="your-new-file.html"</code>: This attribute tells the JavaScript which content file to
+      load.</li>
+    <li><code>href="#your-section-id"</code>: This should match the `id` of the `&lt;section&gt;` tag inside your new
+      content file.</li>
+    <li><code>&lt;span class="nav-link-text"&gt;Your Page Title&lt;/span&gt;</code>: Wrap your link text in this
+      `&lt;span&gt;` for proper search highlighting.</li>
+  </ul>
+
+  <h3 class="h4 fw-bold mt-4 mb-3">3. Test Your New Page</h3>
+  <p>Save both `index.html` and your new content file. Refresh your browser. Your new link should appear in the sidebar.
+    Click on it to ensure your content loads correctly and that syntax highlighting (if applicable) is working as
+    expected.</p>
+
+  <h3 class="h4 fw-bold mt-4 mb-3">4. Add to Initial Load (Optional)</h3>
+  <p>If you want your new page to be visible by default when the documentation first loads (without needing to click a
+    sidebar link), you can add it to the initial load sequence in `js/script.js`:</p>
+  <pre><code class="language-js">
+// Inside $(document).ready(function() { ... }); in js/script.js
+
+// Add your new page here if you want it to load initially
+loadContentAndScroll('#my-new-feature', 'my-new-feature.html', true, false);
+    </code></pre>
+  <p class="mt-2">Only do this if you intend for multiple sections to appear on the initial page load.</p>
+
+</section>
