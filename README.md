@@ -6,5 +6,12 @@ This is a simple documentation template designed to help you create beautiful an
 ## Demo
 [See online demo here](https://dyazincahya.github.io/simp-docs)
 
+## Source
+- Bootstrap 5
+-  jQuery
+-  Highlight.js
+-  Font Awesome
+-  Google Fonts
+
 ## Credit
 <a href="https://www.flaticon.com/free-icons/document" title="document icons">Document icons created by Freepik - Flaticon</a>
